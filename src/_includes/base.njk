@@ -7,11 +7,17 @@
   <title>{{ title }}</title>
 </head>
 <body>
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
-  <main>
-    {{ content | safe }}
-  </main>
+  <div class="site-wrap">
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer>
+      <h2>All pages</h2>
+      {% include "partials/allpages.njk" %}
+    </footer>
+  </div>
 </body>
 </html>

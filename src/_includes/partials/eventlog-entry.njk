@@ -1,0 +1,29 @@
+<div class="eventlog-entry">
+    <div class="eventlog-entry__date">
+        {% if eventlog.data.dateOverride %}
+            {{ eventlog.data.dateOverride }}
+        {% else %}
+            {{ eventlog.data.date | dateDisplay }}
+        {% endif %}
+    </div>
+    <h2 class="eventlog-entry__title">
+        {{ eventlog.data.title }}
+    </h2>
+    <div class="eventlog-entry__content">
+        {{ eventlog.templateContent | safe }}
+        {% if eventlog.data.strava %}
+            <a class="eventlog__link" href="{{eventlog.data.strava}}">See Strava activity</a>
+        {% endif %}
+        {% if eventlog.data.blog %}
+            <a class="eventlog__link" href="{{eventlog.data.blog}}">Blog post</a>
+        {% endif %}
+        {% if eventlog.data.project %}
+            <a class="eventlog__link" href="{{eventlog.data.project}}">See project</a>
+        {% endif %}
+    </div>
+    <div class="eventlog-entry__taglist">
+        {% for category in eventlog.data.categories %}
+        <span># {{category}}</span>
+        {% endfor %}
+    </div>
+</div>

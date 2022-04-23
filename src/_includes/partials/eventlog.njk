@@ -1,0 +1,11 @@
+<div class="eventlog">
+    <ul class="eventlog__list">
+        {% for eventlog in myCollection | reverse %}
+            {% if eventlog.data.public %}
+                <li class="eventlog__list-item">
+                    {% include 'partials/eventlog-entry.njk' %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

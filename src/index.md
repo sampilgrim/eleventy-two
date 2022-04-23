@@ -4,10 +4,13 @@ layout: base.njk
 
 ---
 
-## Posts
+<!-- ## Posts
+{% include "partials/postlist.njk" %} -->
 
-{% include "postlist.njk" %}
 
-## Cat of the day
 
-<img src="{{ catpic }}" />
+
+
+<!-- ## Cat of the day -->
+
+<!-- <img src="{{ catpic }}" /> -->

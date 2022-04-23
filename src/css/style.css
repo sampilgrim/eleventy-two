@@ -1,3 +1,133 @@
 body {
-    font-family: sans-serif;
+    font-family: "inter", "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    min-height: 100vh;
+    /* color: var(--grey); */
   }
+
+  * {
+    --hot-red: #ef233c;
+    --mustard-yellow: #f2bb05;
+    --dark-blue: #124e78;
+    --pale-blue: #dbe4ee;
+    --grey: #999999;
+    --mid-grey: #707070;
+}
+
+.site-wrap {
+    min-height: 100vh;
+    xbackground-color: var(--pale-blue);
+}
+
+.wrapper, body > * {
+  margin: 0 auto;
+  max-width: 70rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+header {
+  padding-top: 2rem;
+}
+
+
+.eventlog {
+  --unit: 0.25rem;
+  margin: 0px;
+}
+.eventlog * {
+  /* reset */
+  margin: 0px;
+  padding: 0px;
+}
+
+.eventlog__list {
+
+  /* reset */
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+
+  /* inset left */
+  margin-left: calc( var(--unit) * 4 );
+
+  /* support absolute line */
+  position: relative;
+
+}
+
+/* vertical line */
+.eventlog__list::before {
+  content: "";
+  height: 100%;
+  width: 2px;
+  background-color: var(--grey);
+  position: absolute;
+  display: block;
+  left: -13px; /* to fix */
+  top: calc(var(--unit) * 2); /* to fix */
+}
+
+.eventlog__list-item {
+
+}
+
+.eventlog-entry {
+  margin-bottom: 2rem;
+}
+
+.eventlog-entry > * {
+  margin-bottom: 0.5em;
+}
+
+.eventlog-entry__date {
+  /* align circle with text */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  /* styling */
+  color: var(--grey);
+  line-height: 1.15;
+  font-size: 0.85rem;
+}
+
+/* blob */
+.eventlog-entry__date::before {
+  content: "";
+  border-radius: var(--unit);
+  width: var(--unit);
+  height: var(--unit);
+  border: 2px solid var(--grey);
+  position: absolute;
+  display: block;
+  margin-left: calc( var(--unit) * -4 );
+  margin-right: var(--unit);
+  background-color: white;
+}
+
+.eventlog-entry__title {
+  font-size: 1.25rem;
+
+}
+
+.eventlog-entry__content {
+  color: var(--mid-grey);
+}
+
+.eventlog img {
+  max-height: 400px;
+}
+
+.eventlog-entry__taglist {
+  color: var(--dark-blue);
+  font-size: 0.85rem;
+}
+.eventlog-entry__taglist > * {
+  padding: 0.5em;
+  background-color: white;
+  border: 1px solid var(--dark-blue);
+  border-radius: 4px;
+  display: inline-block;
+}

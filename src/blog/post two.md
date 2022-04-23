@@ -1,4 +1,4 @@
 ---
-title: Second post title
+title: Post two
 ---
 I'm a second post
